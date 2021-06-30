@@ -1,5 +1,4 @@
 #!/bin/bash/
-sudo -i
 sudo apt-get update -y
 sudo apt-get install -y apt-transport-https
 

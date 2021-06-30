@@ -5,7 +5,7 @@ sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://apt.kubernetes.io/ kubernetes-xenial main
+deb https://apt.kubernetes.io/ kubernetes-xenial mainhttps://github.com/devopschak/kubernetesclusterscript
 EOF
 
 apt-get update -y
@@ -38,4 +38,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
 kubectl get nodes
+kubectl taint nodes --all node-role.kubernetes.io/master-
 kubectl get pods --all-namespaces

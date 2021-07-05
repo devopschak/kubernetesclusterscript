@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get install apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
